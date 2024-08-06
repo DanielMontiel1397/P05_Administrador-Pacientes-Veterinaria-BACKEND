@@ -31,7 +31,9 @@ const corsOptions = {
     }
 }
 
-app.use(cors(corsOptions));
+app.use(cors(
+    {origin: '*'}
+));
 
 ///RUTAS
 app.use('/api/veterinarios',veterinarioRoutes);
