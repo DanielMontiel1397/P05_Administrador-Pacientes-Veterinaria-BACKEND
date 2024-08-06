@@ -5,7 +5,7 @@ import protegerRuta from '../middelware/protegerRuta.js';
 const router = express.Router();
 
 router.post('/',registrar);
-router.get('/confirmar/:token',confirmarCuenta)
+router.get('/confirmar-cuenta/:token',confirmarCuenta)
 router.post('/login',autenticar);
 router.post('/olvide-password',olvidePassword)
 router.get('/olvide-password/:token', comprobarToken)
