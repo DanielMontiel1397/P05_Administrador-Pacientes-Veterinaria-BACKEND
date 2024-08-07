@@ -15,10 +15,9 @@ const agregarPaciente = async (req,res) => {
 
 }
 
-const optenerPacientes = async (req,res) => {
-    
-    //Obtener pacientes del veterinario que inicio sesion
+const obtenerPacientes = async (req,res) => {
 
+    //Obtener pacientes del veterinario que inicio sesion
     const pacientes = await Paciente.find().where('veterinario').equals(req.veterinario);
 
     res.json(pacientes)
@@ -104,7 +103,7 @@ const eliminarPaciente = async (req,res) => {
 
 
 export{
-    optenerPacientes,
+    obtenerPacientes,
     agregarPaciente,
     obtenerPaciente,
     actualizarPaciente,

@@ -1,10 +1,10 @@
-import { optenerPacientes,agregarPaciente, obtenerPaciente, actualizarPaciente, eliminarPaciente } from '../controller/pacienteController.js';
+import { obtenerPacientes,agregarPaciente, obtenerPaciente, actualizarPaciente, eliminarPaciente } from '../controller/pacienteController.js';
 import protegerRuta from '../middelware/protegerRuta.js';
 import express from 'express';
 
 const routes = express.Router();
 
-routes.get('/',protegerRuta,optenerPacientes);
+routes.get('/',protegerRuta,obtenerPacientes);
 routes.post('/',protegerRuta, agregarPaciente);
 
 routes.get('/:id',protegerRuta,obtenerPaciente);

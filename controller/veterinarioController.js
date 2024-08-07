@@ -38,14 +38,13 @@ const registrar = async (req,res) => {
 const confirmarCuenta = async (req,res) => {
     
     const {token} =req.params;
-    console.log(`El token es: ${token}`);
     const existeToken = await Veterinario.findOne({token:token});
 
     if(!existeToken){
         const error = new Error('El Token no existe');
         return res.status(400).json({msg: error.message});
     }
-    console.log('El token si existe');
+
     try{
         existeToken.token = null;
         existeToken.confirmado = true;
@@ -89,7 +88,10 @@ const autenticar = async (req,res) => {
         _id: usuario._id,
         nombre: usuario.nombre,
         email: usuario.email,
-        token: generarJWT(usuario.id)
+        token: generarJWT({
+            id: usuario.id,
+            nombre: usuario.nombre
+        })
     })
 
 }
