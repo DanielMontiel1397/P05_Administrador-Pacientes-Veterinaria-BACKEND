@@ -90,7 +90,7 @@ const eliminarPaciente = async (req,res) => {
     } 
 
     if(paciente.veterinario._id.toString() !== req.veterinario._id.toString()){
-        return res.jason({msg: "Accion no válida"})
+        return res.json({msg: "Accion no válida"})
     }
 
     try{
