@@ -14,7 +14,7 @@ const emailRegistro = async (datos)=>{
     const {email,nombre,token} = datos;
 
     const info = await transport.sendMail({
-        from: "APV - Administrador de pacientes de Veterinaria",
+        from: '"APV - Administrador de pacientes de Veterinaria" <no-reply@administradorpacientesveterinaria.com>',
         to: email,
         subject: "Confirma tú cuenta en APV",
         text: "Comprueba tú cuenta en APV",
@@ -23,13 +23,13 @@ const emailRegistro = async (datos)=>{
             <div style="max-width: 600px; margin: auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 
                 <div style="background-color: #4f46e5; color: white; padding: 20px; text-align: center;">
-                <h1 style="margin: 0; font-size: 24px;">administradorpacientesveterinaria.com</h1>
+                <h1 style="margin: 0; font-size: 24px;">AdministradorPacientesVeterinaria.com</h1>
                 </div>
 
                 <div style="padding: 30px; color: #333;">
                 <p style="font-size: 18px;">Hola <strong>${nombre}</strong>,</p>
                 <p style="font-size: 16px; line-height: 1.5;">
-                    Gracias por registrarte en <strong>administradorpacientesveterinaria.com</strong>.  
+                    Gracias por registrarte en <strong>AdministradorPacientesVeterinaria.com</strong>.  
                     Tu cuenta ya está casi lista, solo necesitas confirmarla dando click en el siguiente botón:
                 </p>
 
