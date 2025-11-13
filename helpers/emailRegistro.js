@@ -19,12 +19,34 @@ const emailRegistro = async (datos)=>{
         subject: "Confirma tú cuenta en APV",
         text: "Comprueba tú cuenta en APV",
         html: `
-            <p>Hola: ${nombre}, comprueba tú cuenta en APV.</p>
-            <p>Tú cuenta ya esta lista, solo debes comprobarla en el siguiente enlace: 
-                <a href="${process.env.FRONTEND_URL}/confirmar-cuenta/${token}">Confirmar Cuenta</a>
-            </p>
+            <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 40px;">
+            <div style="max-width: 600px; margin: auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                
+                <div style="background-color: #4f46e5; color: white; padding: 20px; text-align: center;">
+                <h1 style="margin: 0; font-size: 24px;">administradorpacientesveterinaria.com</h1>
+                </div>
 
-            <p>Si tu no creaste esta cuenta, puedes ignorar este mensaje</p>
+                <div style="padding: 30px; color: #333;">
+                <p style="font-size: 18px;">Hola <strong>${nombre}</strong>,</p>
+                <p style="font-size: 16px; line-height: 1.5;">
+                    Gracias por registrarte en <strong>administradorpacientesveterinaria.com</strong>.  
+                    Tu cuenta ya está casi lista, solo necesitas confirmarla dando click en el siguiente botón:
+                </p>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="${process.env.FRONTEND_URL}/confirmar-cuenta/${token}"
+                    style="background-color: #4f46e5; color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; display: inline-block;">
+                    Confirmar Cuenta
+                    </a>
+                </div>
+
+                <p style="font-size: 15px; line-height: 1.6; color: #555;">
+                    Si tú no creaste esta cuenta, puedes ignorar este mensaje sin problema.
+                </p>
+            
+                </div>
+            </div>
+            </div>
         `
     });
 
