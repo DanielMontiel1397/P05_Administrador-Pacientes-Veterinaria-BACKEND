@@ -14,7 +14,7 @@ const emailRegistro = async (datos)=>{
     const {email,nombre,token} = datos;
 
     const info = await transport.sendMail({
-        from: '"APV - Administrador de pacientes de Veterinaria" <no-reply@administradorpacientesveterinaria.com>',
+        from: '"AdministradorPacientesVeterinaria.com" <no-reply@administradorpacientesveterinaria.com>',
         to: email,
         subject: "Confirma tú cuenta en APV",
         text: "Comprueba tú cuenta en APV",
